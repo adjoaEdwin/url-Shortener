@@ -1,0 +1,28 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "A simple url shortener that shortens a long url.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adjoaEdwin/url-Shortener.git"
+  },
+  "author": "Abigail Edwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adjoaEdwin/url-Shortener/issues"
+  },
+  "homepage": "https://github.com/adjoaEdwin/url-Shortener#readme",
+  "dependencies": {
+    "atob": "^2.1.1",
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
+  }
+}
