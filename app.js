@@ -4,6 +4,7 @@ const atob = require('atob')
 const btoa = require('btoa')
 const path = require('path')
 const mongoose = require('mongoose')
+const routes = require('./routes/url')
 
 // ----------------------------------------------------------------------------------
 
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(express.static('public'))
+app.use(routes)
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'))
