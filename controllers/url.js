@@ -38,7 +38,7 @@ module.exports = {
 
 
             if(url.url.slice(0, 4) === 'http'){  
-             return res.status(301).redirect(url.url)
+             return res.status(301).redirect('url.url')
             }
 
 
