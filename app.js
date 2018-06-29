@@ -4,15 +4,18 @@ const path = require('path')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const routes = require('./routes')
+require('dotenv').load({ path: '.env'})
+
 
 // ----------------------------------------------------------------------------------
-
+if (process.env.MODE == 'development') {
+	require('dotenv').config();
 
 const app = express()
 
 
 //database connection here --------------------------------------------------------
-mongoose.connect('mongodb://adjoa:summeryz1.@ds261570.mlab.com:61570/long_url')
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://adjoa:summeryz1.@ds261570.mlab.com:61570/long_url')
     .then(() => {
         console.log('Connection to database successfull')
     })
@@ -29,7 +32,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, '/public/')))
 app.use('/css', express.static(path.join(__dirname, '/node_modules/bulma/css')))
 app.use('/assets', express.static(path.join(__dirname, 'public/css')))
-app.use('/assets', express.static(path.join(__dirname, 'public/js')))
+app.use('/assets', express.static(path.join(__dirname, 'public/imgs')))
 app.set('views', './src/views')
 app.set('view engine', 'ejs')
 
