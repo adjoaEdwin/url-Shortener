@@ -7,9 +7,11 @@ const routes = require('./routes')
 require('dotenv').load({ path: '.env'})
 
 
-// ----------------------------------------------------------------------------------
-if (process.env.MODE == 'development') {
-	require('dotenv').config();
+// ---------------------------------------------------------------------------------
+
+if (process.env.MODE == 'production') {
+}
+
 
 const app = express()
 
