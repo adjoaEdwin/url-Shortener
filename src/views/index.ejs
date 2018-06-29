@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>title=URL Shortener</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="css/bulma.min.css">
+</head>
+<body>
+    <section class="hero is-fullheight wrapper">
+        <div>
+            <h1 class="title">Shorten Your URL.</h1>
+            <form action="/add-url" method="POST">
+                <label for="url" class="subtitle">Input the URL:</label>
+                <input type="text" name="url"  class="inputField" required/>
+                <input type="submit" class="submitButton">                     
+            </form>
+        </div>
+        
+    </section>
+    <script src="/assets/index.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
-let inputButton = document.getElementById('input');
-let shortenButton = document.getElementById('btn')
-shortenButton.addEventListener('click', () => {
-    let conte
-})
+
+let shortenButton = document.getElementById('shortenButton')
+let inputButton = document.getElementById('inputButton')
+let content = document.getElementById('content')
+
+

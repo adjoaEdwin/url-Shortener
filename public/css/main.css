@@ -1,0 +1,35 @@
+html{
+    height: 100vh;
+}
+
+.wrapper{
+    background-color: silver !important;
+}
+
+.title{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px !important;
+}
+
+.subtitle{
+    font-size: 1.5rem !important;
+    padding-right: 10px;
+    padding-left: 500px !important;
+}
+
+.inputField{
+    width: 500px;
+    padding: 10px;
+    font-size: 1.2rem !important;
+}
+
+.submitButton{
+    padding:10px;
+    font-size: 1.2rem !important;
+}
+
+.smallTitle{
+    text-align: center;
+    font-size: 1.5rem;
+}

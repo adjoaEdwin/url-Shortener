@@ -1,10 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const atob = require('atob')
-const btoa = require('btoa')
 const path = require('path')
 const mongoose = require('mongoose')
-const routes = require('./routes/url')
+const logger = require('morgan')
+const routes = require('./routes')
 
 // ----------------------------------------------------------------------------------
 
@@ -21,20 +20,24 @@ mongoose.connect('mongodb://adjoa:summeryz1.@ds261570.mlab.com:61570/long_url')
         console.error(err)
     })
 
-app.use("/assets", express.static(path.join(__dirname, 'public/css')))
+
+app.use(logger('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }))
-app.use(express.static('public'))
-app.use(routes)
+app.use(express.static(path.join(__dirname, '/public/')))
+app.use('/css', express.static(path.join(__dirname, '/node_modules/bulma/css')))
+app.use('/assets', express.static(path.join(__dirname, 'public/css')))
+app.use('/assets', express.static(path.join(__dirname, 'public/js')))
+app.set('views', './src/views')
+app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'))
+    res.render('index')
 })
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public/css/style.css'))
-// })
+
+app.use(routes);
 
 
 const port = process.env.PORT || 3000
