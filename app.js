@@ -4,15 +4,9 @@ const path = require('path')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const routes = require('./routes')
-require('dotenv').load({ path: '.env'})
 
 
 // ---------------------------------------------------------------------------------
-
-if (process.env.MODE == 'production') {
-}
-
-
 const app = express()
 
 
