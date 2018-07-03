@@ -9,6 +9,11 @@ const routes = require('./routes')
 // ---------------------------------------------------------------------------------
 const app = express()
 
+if(app.get('env') == 'development') {
+    require('dotenv').config()
+}
+console.log(process.env.LINK)
+
 
 //database connection here --------------------------------------------------------
 mongoose.connect(process.env.MONGODB_URI ||'mongodb://adjoa:summeryz1.@ds261570.mlab.com:61570/long_url')

@@ -12,13 +12,13 @@ module.exports = {
         const newURL = new URL({
             url, token: randomString.generate(5)
         })
-
+        console.log(process.env.LINK);
         newURL.save((err, url)=> {
             if(err) return res.render('url-error')
 
             res.render('url-success', {
                 token: url.token,
-                link: "http://localhost:3000/"
+                link: process.env.LINK
             });
 
         })
